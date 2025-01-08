@@ -138,9 +138,7 @@ def plt_stationary(x_train, y_train):
     cscat  = ax[1].scatter(w0,b, s=100, color=dlblue, zorder= 10, label="cost with \ncurrent w,b")
     chline = ax[1].hlines(b, ax[1].get_xlim()[0],w0, lw=4, color=dlpurple, ls='dotted')
     cvline = ax[1].vlines(w0, ax[1].get_ylim()[0],b, lw=4, color=dlpurple, ls='dotted')
-    ax[1].text(0.5,0.95,"Click to choose w,b",  bbox=dict(facecolor='white', ec = 'black'), fontsize = 10,
-                transform=ax[1].transAxes, verticalalignment = 'center', horizontalalignment= 'center')
-
+    
     #Surface plot of the cost function J(w,b)
     ax[2].plot_surface(tmp_w, tmp_b, z,  cmap = dlcm, alpha=0.3, antialiased=True)
     ax[2].plot_wireframe(tmp_w, tmp_b, z, color='k', alpha=0.1)
@@ -151,7 +149,6 @@ def plt_stationary(x_train, y_train):
     ax[2].yaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
     ax[2].zaxis.set_pane_color((1.0, 1.0, 1.0, 0.0))
     ax[2].set_zlabel("J(w, b)\n\n", rotation=90)
-    plt.title("Cost(w,b) \n [You can rotate this figure]", size=12)
     ax[2].view_init(30, -120)
 
     return fig,ax, [cscat, chline, cvline]
@@ -231,7 +228,6 @@ def soup_bowl():
     ax.set_xlabel("$w$")
     ax.set_ylabel("$b$")
     ax.set_zlabel("$J(w,b)$", rotation=90)
-    ax.set_title("$J(w,b)$\n [You can rotate this figure]", size=15)
 
     plt.show()
 
