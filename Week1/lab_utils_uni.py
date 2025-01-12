@@ -284,7 +284,6 @@ def plt_divergence(p_hist, J_hist, x_train,y_train):
     fig = plt.figure(figsize=(12,5))
     plt.subplots_adjust( wspace=0 )
     gs = fig.add_gridspec(1, 5)
-    fig.suptitle(f"Cost escalates when learning rate is too large")
     #===============
     #  First subplot
     #===============
