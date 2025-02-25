@@ -1,6 +1,6 @@
 # UNIT TESTS
-from tensorflow.keras.activations import sigmoid as tf_keras_sigmoid
-from tensorflow.keras.layers import Dense
+from tensorflow.python.keras.activations import sigmoid
+from tensorflow.python.keras.layers import Dense
 
 import numpy as np
 
@@ -10,9 +10,9 @@ def test_c1(target):
     assert target.input.shape.as_list() == [None, 400], \
         f"Wrong input shape. Expected [None,  400] but got {target.input.shape.as_list()}"
     i = 0
-    expected = [[Dense, [None, 25], tf_keras_sigmoid],
-                [Dense, [None, 15], tf_keras_sigmoid],
-                [Dense, [None, 1], tf_keras_sigmoid]]
+    expected = [[Dense, [None, 25], sigmoid],
+                [Dense, [None, 15], sigmoid],
+                [Dense, [None, 1], sigmoid]]
 
     for layer in target.layers:
         assert type(layer) == expected[i][0], \
